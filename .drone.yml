@@ -1,0 +1,4 @@
+build:
+  image: jvican/docker-alpine-sbt-git
+  commands:
+    - sbt clean test scripted -Dsbt.ivy.home=/drone/.ivy2
