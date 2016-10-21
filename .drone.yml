@@ -1,9 +1,6 @@
 build:
-  image: jvican/docker-alpine-sbt-git
-  environment:
-    - sbt.boot.properties=/drone/sbt.boot
+  image: julienrf/docker-scala-sbt-git
   commands:
-    - test -e /drone/sbt.boot || echo "[boot]\n/directory: drone/.sbt\n\n[ivy]\nivy-home: /drone/.ivy2" > /drone/sbt.boot
     - sbt clean test scripted
 
 cache:
